@@ -1,6 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn, ManyToOne, JoinColumn } from "typeorm";
 import { Usuario } from "./Usuario";
 import { TipoEntulho } from "./TipoEntulho";
+import { Agendamento } from "./Agendamento";
+import { OneToMany } from "typeorm";
 
 export enum StatusSolicitacao {
   PENDENTE = "pendente",
@@ -45,4 +47,7 @@ export class Solicitacao {
   @ManyToOne(() => TipoEntulho)
   @JoinColumn({ name: "tipo_entulho_id" })
   tipo_entulho!: TipoEntulho;
+
+  @OneToMany(() => Agendamento, (agendamento) => agendamento.solicitacao)
+  agendamentos!: Agendamento[];
 }
