@@ -25,7 +25,7 @@ export class Solicitacao {
   @Column({ type: "varchar", length: 100 })
   bairro!: string;
 
-  @Column({ type: "varchar", length: 255, nullable: true })
+  @Column({ type: "text", nullable: true })
   imagem_url!: string;
 
   @Column({

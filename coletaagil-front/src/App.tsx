@@ -1,0 +1,14 @@
+import React from "react";
+import { BrowserRouter } from "react-router-dom";
+import RoutesApp from "./routes"; 
+import "./App.css";
+
+const App: React.FC = () => {
+  return (
+    <BrowserRouter>
+      <RoutesApp />
+    </BrowserRouter>
+  );
+};
+
+export default App;
